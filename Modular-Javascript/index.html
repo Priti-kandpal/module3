@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>landing page</title>
+
+    <script type="module">
+        import Navbar from "./navbar.js";
+        import Footer from "./footer.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("navbar").innerHTML = Navbar();
+            document.getElementById("footer").innerHTML = Footer();
+        });
+    </script>
+
+</head>
+
+<body style="background:#FFFDF7; font-family:Arial;">
+    
+    <div id="navbar"></div>
+
+    <section style="
+        margin:50px auto;
+        width:70%;
+        background:#FDE2E4;
+        padding:25px;
+        border-radius:12px;
+        color:#5E548E;">
+        <h1>Hello, Let's Get Started!</h1>
+        <p>A clean and minimal space where you can create an account, log in, and manage your daily tasks with ease.
+            <br> Stay organized and keep track of what matters
+        </p>
+    </section>
+
+    <div id="footer"></div>
+
+</body>
+</html>

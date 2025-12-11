@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signup</title>
+
+    <script type="module">
+        import Navbar from "./navbar.js";
+        import Footer from "./footer.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("navbar").innerHTML = Navbar();
+            document.getElementById("footer").innerHTML = Footer();
+
+            document.getElementById("signupForm").addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const user = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value,
+                };
+
+                localStorage.setItem("user", JSON.stringify(user));
+                alert("Signup Successful!");
+                window.location.href = "login.html";
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background:#FFFDF7; font-family:Arial;">
+
+    <div id="navbar"></div>
+
+    <h2 style="text-align:center; color:#5E548E;">Signup</h2>
+
+    <form id="signupForm" style="
+        width:300px;
+        margin:20px auto;
+        background:#FAF3DD;
+        padding:20px;
+        border-radius:12px;">
+
+        <input id="name" type="text" placeholder="Name" required 
+            style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <input id="email" type="email" placeholder="Email" required 
+            style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <input id="password" type="password" placeholder="Password" required 
+            style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <button style="
+            width:100%; padding:10px; 
+            background:#E0BBE4; border:none;">Signup</button>
+    </form>
+
+    <div id="footer"></div>
+
+</body>
+</html>

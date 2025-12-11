@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+
+    <script type="module">
+        import Navbar from "./navbar.js";
+        import Footer from "./footer.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("navbar").innerHTML = Navbar();
+            document.getElementById("footer").innerHTML = Footer();
+
+            document.getElementById("loginForm").addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const user = JSON.parse(localStorage.getItem("user"));
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                if (user && user.email === email && user.password === password) {
+                    localStorage.setItem("isLoggedIn", "true");
+                    window.location.href = "todos.html";
+                } else {
+                    alert("Invalid Email or Password!");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background:#FFFDF7; font-family:Arial;">
+
+    <div id="navbar"></div>
+
+    <h2 style="text-align:center; color:#5E548E;">Login</h2>
+
+    <form id="loginForm" style="
+        width:300px;
+        margin:20px auto;
+        background:#FDE2E4;
+        padding:20px;
+        border-radius:12px;">
+
+        <input id="email" type="email" placeholder="Email" required 
+            style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <input id="password" type="password" placeholder="Password" required 
+            style="width:100%; padding:10px; margin-bottom:10px;">
+
+        <button style="
+            width:100%; padding:10px; 
+            background:#E0BBE4; border:none;">Login</button>
+    </form>
+
+    <div id="footer"></div>
+
+</body>
+</html>
