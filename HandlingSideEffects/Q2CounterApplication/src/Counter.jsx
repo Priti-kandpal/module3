@@ -1,0 +1,23 @@
+import { useState, useEffect } from "react";
+import "./Counter.css"
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count !== 0 && count % 3 === 0) {
+      alert(`The current number ${count} is divisible by 3`);
+    }
+  }, [count]); // effect runs only when count changes
+
+  return (
+    <div className="container">
+        <div className="counter-box">
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div></div>
+  );
+}
+
+export default Counter;
