@@ -1,0 +1,30 @@
+
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f6ff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h4 {
+  background-color: #eef2ff;
+  padding: 10px;
+  border-left: 4px solid #4f46e5;
+  border-radius: 4px;
+  margin: 10px
+}
